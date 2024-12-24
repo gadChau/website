@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gadtchaud</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Animation de bordure */
+    @keyframes borderAnimation {
+      0% {
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        border-color: #ff8c00;
+        box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+      }
+      100% {
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    /* Application de l'animation sur les cartes */
+    .music-card {
+      transition: all 0.3s ease-in-out;
+      border: 2px solid transparent;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .music-card:hover {
+      animation: borderAnimation 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Accueil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="biographie.html">Biographie</a></li>
+          <li class="nav-item"><a class="nav-link active" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Musique -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h1 class="mb-4">Musique</h1>
+      <div class="row g-4">
+        <!-- Musique 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm music-card">
+            <div class="card-body">
+              <h5 class="card-title">RIP</h5>
+              <audio controls class="music-player">
+                <source src="Asset/audio/RIP.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Musique 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm music-card">
+            <div class="card-body">
+              <h5 class="card-title">Gad</h5>
+              <audio controls class="music-player">
+                <source src="Asset/audio/gad.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Musique 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm music-card">
+            <div class="card-body">
+              <h5 class="card-title">Am Tired (Na lembi)</h5>
+              <audio controls class="music-player">
+                <source src="Asset/audio/Am Tired (Na lembi) By Johnson Adisa Ft Gad tchau Officiel Audio Prod Dinnoss Beatz 2024.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Musique 4 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm music-card">
+            <div class="card-body">
+              <h5 class="card-title">Talent by God Bless</h5>
+              <audio controls class="music-player">
+                <source src="Asset/audio/TALENT BY GOD BLESS-1.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Musique 5 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm music-card">
+            <div class="card-body">
+              <h5 class="card-title">La Paix by God Bless</h5>
+              <audio controls class="music-player">
+                <source src="Asset/audio/la paix by god bless.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm music-card">
+          <div class="card-body">
+            <h5 class="card-title">Dady By Johnson Adisa & Gad Tchau</h5>
+            <audio controls class="music-player">
+              <source src="Asset/audio/Dady By Johnson Adisa & Gad TCHAU Officiel Audio Prod Dinnoss Beatz.mp3" type="audio/mpeg">
+              Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script pour gérer les musiques -->
+  <script>
+    // Rendre les musiques exclusives
+    const players = document.querySelectorAll('.music-player');
+    players.forEach(player => {
+      player.addEventListener('play', () => {
+        players.forEach(otherPlayer => {
+          if (otherPlayer !== player) {
+            otherPlayer.pause();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

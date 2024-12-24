@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biographie - Nom de l'Artiste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Animation de texte */
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Effet de transition pour les images */
+    .img-fluid {
+      transition: transform 0.3s ease;
+    }
+
+    .img-fluid:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Accueil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active" href="biographie.html">Biographie</a></li>
+          <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Biographie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h1 class="text-center mb-4 fade-in">Biographie</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="Asset/images/gad1.jpg" alt="Photo de l'artiste" class="d-block w-100 img-fluid rounded">
+              </div>
+              <div class="carousel-item">
+                <img src="Asset/images/gad4.jpg" alt="Photo de l'artiste" class="d-block w-100 img-fluid rounded">
+              </div>
+              <div class="carousel-item">
+                <img src="Asset/images/gad3.jpg" alt="Photo de l'artiste" class="d-block w-100 img-fluid rounded">
+              </div>
+              <div class="carousel-item">
+                <img src="Asset/images/gad2.jpg" alt="Photo de l'artiste" class="d-block w-100 img-fluid rounded">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <p class="fade-in">
+            Artiste, rappeur, chanteur, compositeur gospel.
+            Mon inspiration est tirée en grande partie des jeunes, afin de les évangéliser et les amener à Christ.
+            J'ai commencé la musique au lycée en 7ème, influencé par le rappeur français Yousoupha. 
+            J'ai chanté lors d'activités du lycée et d'événements du week-end, où j'étais souvent invité. 
+            C'est en 6ème secondaire que j'ai rencontré Jésus… (Mon parcours est très long, j'ai le droit de tout raconter !)
+          </p>
+          <blockquote class="blockquote mt-4">
+            <p class="mb-0">"La musique est un moyen de toucher les cœurs et de changer des vies."</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // JavaScript pour faire défiler automatiquement les images toutes les secondes
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    
+    function changeImage() {
+      items[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % items.length; // Passe à la prochaine image
+      items[currentIndex].classList.add('active');
+    }
+
+    // Change l'image toutes les 1 seconde (1000ms)
+    setInterval(changeImage, 2000);
+  </script>
+</body>
+</html>
